@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Card from './Card.js';
+import Bookmark from './Bookmark.js';
+import './styles/Main.scss';
 
-class App extends Component {
+export default class App extends Component {
+  constructor() {
+    super();
+      this.state = {
+
+    }
+  }
+
+
+
   render() {
     return (
       <div className="App">
