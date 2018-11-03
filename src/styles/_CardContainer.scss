@@ -1,5 +1,18 @@
 .card-container {
-  height: 100vh;
   overflow: scroll;
   width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+}
+
+.next-button, 
+.previous-button {
+  height: 50px;
+  width: 100px;
 }
