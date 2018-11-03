@@ -1,22 +1,15 @@
 import React, { Component } from 'react';
-import './styles/Main.scss';
+import './styles/_Bookmark.scss';
 
 
 export default class Bookmark extends Component {
-  constructor(props) {
+  constructor() {
     super();
     this.state = {
-      prototypeData: []
+      
+    }
   }
+}
 
 
-  componentDidMount() {
-    fetch('')
-      .then(response => response.json())
-      .then(prototypeData => {
-        this.setState({
-          prototypeData: 
-        })
-      })
-      .catch(error => console.log(error))
-  }
+  

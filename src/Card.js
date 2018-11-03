@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './styles/Main.scss';
+import './styles/_Card.scss';
 
 
 export default class Card extends Component {
-  constructor(props) {
+  constructor(props) { 
     super();
     this.state = {
       extendCard: false,
@@ -11,7 +11,18 @@ export default class Card extends Component {
     }
   }
 
-  toggleFullCard = () => {
-    this.setState({
-      extendCard: !this.state.fullCard,
-    });
+
+  render() {
+    return (
+      <div className="card">
+
+        <div>
+        {this.props.prototypeData.prototypeName}
+        </div>
+      </div>
+    )}
+  }
+
+
+
+
