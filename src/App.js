@@ -2,15 +2,17 @@ import React, { Component } from 'react';
 import './App.scss';
 import Card from './Card.js';
 import Bookmark from './Bookmark.js';
-import CardContainer from './CardContainer.js'
+import CardContainer from './CardContainer.js';
+
 
 
 export default class App extends Component {
   constructor() {
     super();
-      this.state = {
+    this.state = {
         prototypeData: []
     }
+    
   }
 
   componentDidMount() {
@@ -26,9 +28,12 @@ export default class App extends Component {
 
 
 
+
   render() {
+    console.log(this.state.prototypeData);
     return (
       <div className="App">
+        <h1>EAT YOUR PROTES</h1>
         <CardContainer allPrototypeData={this.state.prototypeData} />
       </div>
     );
