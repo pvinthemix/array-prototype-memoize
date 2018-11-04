@@ -10,10 +10,17 @@
   position: relative;
 }
 
-.full-card {
+.extend-card {
+  @extend .card;
   height: 400px;
 }
 
 .prototype-text {
   color: red;
+}
+
+.bookmark-button {
+  border: solid;
+  border-radius: 25pc;
+  background-color: aquamarine;
 }
