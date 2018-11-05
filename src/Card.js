@@ -22,7 +22,7 @@ export default class Card extends Component {
 
 
   render() {
-    let prototype =''
+    let prototype = ''
     let extendCard = ''
     if(this.props.prototypeData){
       prototype = this.props.prototypeData.prototypeName
@@ -32,10 +32,7 @@ export default class Card extends Component {
       extendCard = (
         <div className='extend-card' onClick={this.toggleExtendCard}>
         <div className="bookmark-button-container">
-          <button 
-            onClick={this.bookmarkOnClick} 
-            className='bookmark-button'
-          >
+          <button onClick={this.bookmarkOnClick} className='bookmark-button'>
             *Bookmark*
           </button>
         </div>

@@ -43,11 +43,16 @@ export default class App extends Component {
     localStorage.setItem('allBookmarkedCards', JSON.stringify(allBookmarkedCards))
   }
 
+  removeCardfromList = (card) => {
+
+
+  }
+
 
   render() {
     return (
       <div className="App">
-        <h1>EAT YOUR PROTES</h1>
+        <h1>Space.Prototypes</h1>
         <CardContainer 
           allPrototypeData={this.state.prototypeData} 
           addToBookmarkList={this.addToBookmarkList}

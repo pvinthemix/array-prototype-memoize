@@ -18,6 +18,7 @@ export default class BookmarkContainer extends Component {
     }
     return (
       <div className="bookmark-container">
+      <h3 className='bookmark-container-title'>Prototypes to come back to:</h3>
         {
           this.props.allBookmarkedCards.map((prototypeName) => {
             return (
