@@ -14,11 +14,11 @@ export default class CardContainer extends Component {
   nextCard = (event) => {
     if (this.state.counter > 25) {
       this.setState({
-        counter: this.state.counter = 0
+        counter: 0
       })
     } else {
       this.setState({
-        counter: this.state.counter += 1  
+        counter: this.state.counter + 1  
       })
     }
   }
@@ -26,11 +26,11 @@ export default class CardContainer extends Component {
   previousCard = (event) => {
     if (this.state.counter === 25) {
       this.setState({
-        counter: this.state.counter = 0
+        counter: 0
       })
     } else {
       this.setState({
-        counter: this.state.counter += 1  
+        counter: this.state.counter + 1  
       })
     }
   }
@@ -39,7 +39,11 @@ export default class CardContainer extends Component {
     return (
       <div className="card-container">
 
-      <Card key={this.state.counter} prototypeData={this.props.allPrototypeData[this.state.counter]} />
+      <Card 
+        key={this.state.counter} 
+        prototypeData={this.props.allPrototypeData[this.state.counter]} 
+        addToBookmarkList={this.props.addToBookmarkList}
+      />
 
       <div className="controls">
         <button onClick={this.previousCard}className="previous-button">Previous</button>

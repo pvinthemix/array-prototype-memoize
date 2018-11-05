@@ -6,8 +6,7 @@ export default class Card extends Component {
   constructor(props) { 
     super();
     this.state = {
-      extendCard: false,
-      allBookmarkedCards: []
+      extendCard: false
     }
   }
 
@@ -17,18 +16,14 @@ export default class Card extends Component {
     })
   }
 
-  addToBookmarkList = () => {
-    let bookmarkButton = document.querySelector('.bookmark-button');
-    let currentCard = this.props.prototypeData;
-    this.state.allBookmarkedCards.push(currentCard);
-    console.log(this.state.allBookmarkedCards);
+  bookmarkOnClick = () => {
+    this.props.addToBookmarkList(this.props.prototypeData.prototypeName)
   }
 
 
   render() {
     let prototype =''
     let extendCard = ''
-    let hello = document.querySelector('.hello');
     if(this.props.prototypeData){
       prototype = this.props.prototypeData.prototypeName
     } 
@@ -37,7 +32,12 @@ export default class Card extends Component {
       extendCard = (
         <div className='extend-card' onClick={this.toggleExtendCard}>
         <div className="bookmark-button-container">
-          <button onClick={this.addToBookmarkList} className='bookmark-button'>*Bookmark*</button>
+          <button 
+            onClick={this.bookmarkOnClick} 
+            className='bookmark-button'
+          >
+            *Bookmark*
+          </button>
         </div>
           <h2>Prototype Name: <span className="prototype-text">{ prototype }</span></h2>
             <h3>Use Case: <span className="useCase-text">{this.props.prototypeData.useCase}</span></h3>

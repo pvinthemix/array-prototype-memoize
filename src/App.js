@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import './App.scss';
-import Card from './Card.js';
-import Bookmark from './Bookmark.js';
 import CardContainer from './CardContainer.js';
 import BookmarkContainer from './BookmarkContainer.js';
 
@@ -11,9 +9,18 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-        prototypeData: []
+        prototypeData: [],
+        allBookmarkedCards: []
     }
     
+  }
+
+  componentWillMount() {
+    let savedBookmarks = localStorage.getItem('allBookmarkedCards');
+    savedBookmarks = JSON.parse(savedBookmarks)
+    this.setState({
+      allBookmarkedCards: savedBookmarks
+    })
   }
 
   componentDidMount() {
@@ -27,15 +34,27 @@ export default class App extends Component {
       .catch(error => console.log(error))
   }
 
-
+  addToBookmarkList = (card) => {
+    const allBookmarkedCards = this.state.allBookmarkedCards;
+    allBookmarkedCards.push(card);
+    this.setState({
+      allBookmarkedCards: allBookmarkedCards
+    })
+    localStorage.setItem('allBookmarkedCards', JSON.stringify(allBookmarkedCards))
+  }
 
 
   render() {
     return (
       <div className="App">
         <h1>EAT YOUR PROTES</h1>
-        <CardContainer allPrototypeData={this.state.prototypeData} />
-        <BookmarkContainer />
+        <CardContainer 
+          allPrototypeData={this.state.prototypeData} 
+          addToBookmarkList={this.addToBookmarkList}
+        />
+        <BookmarkContainer
+          allBookmarkedCards={this.state.allBookmarkedCards}
+        />
       </div>
     );
   }

@@ -9,6 +9,17 @@ export default class Bookmark extends Component {
       
     }
   }
+
+
+  render() {
+
+    return (
+      <div className='Bookmark'>
+        {this.props.prototypeName}
+      </div>
+
+    )
+  }
 }
 
 
