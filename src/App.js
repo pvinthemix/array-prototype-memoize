@@ -3,6 +3,7 @@ import './App.scss';
 import Card from './Card.js';
 import Bookmark from './Bookmark.js';
 import CardContainer from './CardContainer.js';
+import BookmarkContainer from './BookmarkContainer.js';
 
 
 
@@ -30,11 +31,11 @@ export default class App extends Component {
 
 
   render() {
-    console.log(this.state.prototypeData);
     return (
       <div className="App">
         <h1>EAT YOUR PROTES</h1>
         <CardContainer allPrototypeData={this.state.prototypeData} />
+        <BookmarkContainer />
       </div>
     );
   }

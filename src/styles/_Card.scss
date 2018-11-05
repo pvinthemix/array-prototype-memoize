@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab');;
+
 .card {
   border: solid black 4px;
   background-color: white;
   height: 100px;
-  width: 400px;
+  width: 500px;
   margin: 10px;
   position: relative;
   transition: all 0.2s linear;
@@ -10,6 +12,7 @@
   text-align: center;
   padding: 20px;
   border-radius: 25px;
+  font-family: 'Roboto Slab', serif;
 }
 
 .card:hover {
@@ -27,9 +30,9 @@
 }
 
 .bookmark-button {
-  border: solid;
+  border: solid black 2px;
   border-radius: 25pc;
-  background-color: aquamarine;
+  background-color: chartreuse;
 }
 
 .useCase-text,
