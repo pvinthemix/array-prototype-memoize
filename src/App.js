@@ -44,21 +44,27 @@ export default class App extends Component {
   }
 
   removeCardfromList = (card) => {
-
-
+    const allBookmarkedCards = JSON.parse(localStorage.getItem('allBookmarkedCards'));
+    const index = allBookmarkedCards.indexOf(card);
+      allBookmarkedCards.splice(index, 1);
+    this.setState({
+      allBookmarkedCards: allBookmarkedCards
+    })
+    localStorage.setItem('allBookmarkedCards', JSON.stringify(allBookmarkedCards))
   }
 
 
   render() {
     return (
       <div className="App">
-        <h1>Space.Prototypes</h1>
+        <h1>Space.Prototype</h1>
         <CardContainer 
           allPrototypeData={this.state.prototypeData} 
           addToBookmarkList={this.addToBookmarkList}
         />
         <BookmarkContainer
           allBookmarkedCards={this.state.allBookmarkedCards}
+          removeCardfromList={this.removeCardfromList}
         />
       </div>
     );

@@ -22,7 +22,8 @@ export default class BookmarkContainer extends Component {
         {
           this.props.allBookmarkedCards.map((prototypeName) => {
             return (
-              <Bookmark key={prototypeName} prototypeName={prototypeName} />
+              <Bookmark key={prototypeName} prototypeName={prototypeName} 
+                                            removeCardfromList={this.props.removeCardfromList}/>
             )
           })
         }
