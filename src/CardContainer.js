@@ -12,7 +12,7 @@ export default class CardContainer extends Component {
   }
 
   nextCard = (event) => {
-    if (this.state.counter > 25) {
+    if (this.state.counter > 24) {
       this.setState({
         counter: 0
       })
@@ -24,7 +24,7 @@ export default class CardContainer extends Component {
   }
 
   previousCard = (event) => {
-    if (this.state.counter === 25) {
+    if (this.state.counter === 24) {
       this.setState({
         counter: 0
       })
