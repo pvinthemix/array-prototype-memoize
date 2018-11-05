@@ -23,6 +23,13 @@
   background-color: aquamarine;
 }
 
+.next-button:hover {
+  filter: brightness(60%);
+}
+.previous-button:hover {
+  filter: brightness(60%);
+}
+
 .bookmark-button-container {
   position: absolute;
   top: 10px;
