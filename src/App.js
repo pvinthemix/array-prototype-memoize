@@ -19,7 +19,7 @@ export default class App extends Component {
     let savedBookmarks = localStorage.getItem('allBookmarkedCards');
     savedBookmarks = JSON.parse(savedBookmarks)
     this.setState({
-      allBookmarkedCards: savedBookmarks
+      allBookmarkedCards: savedBookmarks || []
     })
   }
 

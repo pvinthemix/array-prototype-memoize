@@ -13,6 +13,9 @@ export default class BookmarkContainer extends Component {
 
 
   render() {
+    if (this.props.allBookmarkedCards === []) {
+      return <div></div>
+    }
     return (
       <div className="bookmark-container">
         {
