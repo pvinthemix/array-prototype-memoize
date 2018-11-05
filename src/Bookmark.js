@@ -16,7 +16,7 @@ export default class Bookmark extends Component {
     return (
       <div className='Bookmark'>
         <p className='bookmark-text'>{this.props.prototypeName}</p>
-        <button onClick={() => this.props.removeCardfromList(this.props.prototypeName)}>x</button>
+        <button className='delete-bookmark-button'onClick={() => this.props.removeCardfromList(this.props.prototypeName)}>x</button>
       </div>
 
     )
